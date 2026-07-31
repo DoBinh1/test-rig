@@ -233,15 +233,12 @@ At 50 Hz motor frequency ($f_{motor} = 25$ Hz): $f_{BMF} = 34 \times 25 = 850$ H
 
 The gearbox uses a **2-stage series reduction** layout with 3 parallel shafts and 4 spur gears. Power flows from the input shaft through two sequential meshing stages to the output shaft:
 
-```
-Input shaft (Shaft 1)
-    └─ Stage 1 driving gear: Z₁ = 25 teeth
-            ↓ mesh
-        Stage 1 driven gear: Z₂ = 50 teeth  (on Intermediate shaft / Shaft 2)
-        Stage 2 driving gear: Z₃ = 25 teeth (also on Intermediate shaft / Shaft 2)
-            ↓ mesh
-        Stage 2 driven gear: Z₄ = 50 teeth  (on Output shaft / Shaft 3)
-```
+
+<p align="center">
+  <img src="rpimage/gearbox_kinematic_diagram.jpg" width="700"/>
+  <br><em>Figure – Kinematic diagram of the 2-stage spur gear reducer (sơ đồ động học hộp giảm tốc 2 cấp bánh răng trụ). Gears are represented by pitch circles per ISO kinematic convention. Mesh points marked with ×. i₁ = i₂ = 2, i<sub>total</sub> = 4:1.</em>
+</p>
+
 
 **Overall Gear Ratio:**
 
