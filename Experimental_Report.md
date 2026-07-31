@@ -20,32 +20,34 @@
 | 5 | Control box – rear panel (motor connector, NFB, power input) |
 | 6 | Control box – internal wiring |
 | 7 | Belt drive – synchronous belt and pulleys |
-| 8 | Gearbox – 2-stage reduction gearbox |
-| 9 | Gear test sets overview |
-| 10 | Rolling bearing – NACHI 6201ZE |
-| 11 | Bearing close-up |
-| 12 | Magnetic powder brake |
-| 13 | Ji-Xiang DBK-1024V brake controller board |
-| 14 | PCB Piezotronics 356A32/NC accelerometer |
-| 15 | Accelerometer wiring |
-| 16 | Optical incremental encoder – operating principle (A/B/Z signals) |
-| 17 | Eddy-current proximity probe – operating principle |
-| 18 | Proximity probe – dimensional drawing (Bently Nevada) |
-| 19 | Proximity sensor installed on test rig |
-| 20 | RK4 Proximitor Assembly – front (PROX OUT connectors) |
-| 21 | RK4 Proximitor Assembly – rear (probe connections, power) |
-| 22 | RK4 Motor Speed Controller – rear panel |
-| 23 | Torque sensor RT-2.5 Nm |
-| 24 | Strain gauge – Wheatstone bridge detail |
-| 25 | Torque amplifier JS-100 |
-| 26 | NI USB-9234 module |
-| 27 | NI USB-9234 channel wiring diagram |
-| 28 | NI USB-6210 module |
-| 29 | NI USB-6210 pinout |
-| 30 | LabVIEW VI Front Panel |
-| 31 | NI DAQmx example: Read Encoder (Continuously Clock) |
-| 32 | Producer–Consumer architecture pattern (NI documentation) |
-| 33 | Flat Sequence structure — software synchronization of two DAQmx tasks |
+| 8 | Gearbox – 2-stage reduction gearbox (photo) |
+| 9 | Gearbox – kinematic diagram (2-stage spur gear reducer, ISO convention) |
+| 10 | Gear test sets overview |
+| 11 | Rolling bearing – NACHI 6201ZE |
+| 12 | Bearing close-up |
+| 13 | Magnetic powder brake |
+| 14 | Ji-Xiang DBK-1024V brake controller board |
+| 15 | PCB Piezotronics 356A32/NC accelerometer |
+| 16 | Accelerometer wiring |
+| 17 | Optical incremental encoder – operating principle (A/B/Z signals) |
+| 18 | Eddy-current proximity probe – operating principle |
+| 19 | Proximity probe – dimensional drawing (Bently Nevada) |
+| 20 | Proximity sensor installed on test rig |
+| 21 | RK4 Proximitor Assembly – front (PROX OUT connectors) |
+| 22 | RK4 Proximitor Assembly – rear (probe connections, power) |
+| 23 | RK4 Motor Speed Controller – rear panel |
+| 24 | Torque sensor RT-2.5 Nm |
+| 25 | Strain gauge – Wheatstone bridge detail |
+| 26 | Torque amplifier JS-100 |
+| 27 | NI USB-9234 module |
+| 28 | NI USB-9234 channel wiring diagram |
+| 29 | NI USB-6210 module |
+| 30 | NI USB-6210 pinout |
+| 31 | LabVIEW VI Front Panel |
+| 32 | NI DAQmx example: Read Encoder (Continuously Clock) |
+| 33 | Block Diagram 1 – Task initialization frame |
+| 34 | Flat Sequence structure – software synchronization of two DAQmx tasks |
+| 35 | Producer–Consumer architecture pattern (NI documentation) |
 | **A1** | *(Appendix)* LabVIEW Block Diagram 1 – Task initialization frame |
 | **A2** | *(Appendix)* LabVIEW Block Diagram 2 – Acquisition execution frame (Producer + Consumer loops) |
 | **A3** | *(Appendix)* LabVIEW Block Diagram 3 – Consumer loop detail (TDMS write) |
@@ -236,7 +238,7 @@ The gearbox uses a **2-stage series reduction** layout with 3 parallel shafts an
 
 <p align="center">
   <img src="rpimage/gearbox_kinematic_diagram.jpg" width="700"/>
-  <br><em>Figure – Kinematic diagram of the 2-stage spur gear reducer (sơ đồ động học hộp giảm tốc 2 cấp bánh răng trụ). Gears are represented by pitch circles per ISO kinematic convention. Mesh points marked with ×. i₁ = i₂ = 2, i<sub>total</sub> = 4:1.</em>
+  <br><em>Figure 9 – Kinematic diagram of the 2-stage spur gear reducer. Gears are represented by pitch circles per ISO kinematic convention. Z₁ = Z₃ = 25 teeth (drivers), Z₂ = Z₄ = 50 teeth (driven). Mesh points marked with ×. Stage ratios: i₁ = i₂ = 2; overall ratio i<sub>total</sub> = 4:1.</em>
 </p>
 
 
@@ -304,7 +306,7 @@ Both stages share the same GMF harmonic families. Computed GMF values at each in
 
 <p align="center">
   <img src="rpimage/IMG_3565.png" width="650"/>
-  <br><em>Figure 9 – Gear test sets overview</em>
+  <br><em>Figure 10 – Gear test sets overview</em>
 </p>
 
 The experiment uses four interchangeable gear sets to study the effect of fault type, fault severity, and gear material on the vibration signature:
@@ -332,12 +334,12 @@ Understanding the expected vibration signature of each fault type is essential f
 
 <p align="center">
   <img src="rpimage/6z1-nachi.png" width="350"/>
-  <br><em>Figure 10 – Rolling bearing NACHI 6201ZE</em>
+  <br><em>Figure 11 – Rolling bearing NACHI 6201ZE</em>
 </p>
 
 <p align="center">
   <img src="rpimage/beaingL.jpg" width="450"/>
-  <br><em>Figure 11 – Bearing close‑up showing shield and outer race</em>
+  <br><em>Figure 12 – Bearing close-up showing shield and outer race</em>
 </p>
 
 Rolling element bearings are used to support the three gearbox shafts. The NACHI 6201ZE is a single-row deep groove ball bearing selected for its compact size (12 mm bore suitable for small laboratory-scale shafts) and high-speed capability.
@@ -402,7 +404,7 @@ Computed bearing fault frequencies at each shaft speed:
 
 <p align="center">
   <img src="rpimage/brake.png" width="450"/>
-  <br><em>Figure 12 – Magnetic powder brake</em>
+  <br><em>Figure 13 – Magnetic powder brake</em>
 </p>
 
 The magnetic powder brake provides a controlled, adjustable resistive torque at the gearbox output shaft, simulating the load that would be imposed by a driven machine in a real application. The ability to vary the load independently of speed is essential for studying the effect of operating load on gear fault signatures.
@@ -420,7 +422,7 @@ The magnetic powder brake provides a controlled, adjustable resistive torque at 
 
 <p align="center">
   <img src="rpimage/DKB%201024.jpg" width="550"/>
-  <br><em>Figure 13 – Ji-Xiang DBK-1024V brake controller PCB (inside control box). The board accepts 220V AC input, regulates DC excitation voltage to the brake coil, and provides terminal blocks for current adjustment and power connections.</em>
+  <br><em>Figure 14 – Ji-Xiang DBK-1024V brake controller PCB (inside control box). The board accepts 220V AC input, regulates DC excitation voltage to the brake coil, and provides terminal blocks for current adjustment and power connections.</em>
 </p>
 
 The DBK-1024V is the core control board for the magnetic powder brake. It accepts AC mains input (220V) and provides a DC output voltage to the brake coil that is adjustable via the external rotary resistor (connected to the "CURRENT" knob on the control box front panel). The board also provides screw terminal connections for the brake coil wiring.
@@ -490,7 +492,7 @@ The encoder is integrated directly onto the rear (tail end) of the motor and is 
 
 <p align="center">
   <img src="rpimage/encoder.png" width="600"/>
-  <br><em>Figure 16 – Optical incremental encoder operating principle: code disc with LED/photodetector pairs generating quadrature signals A and B (90° phase offset), plus index pulse Z (one pulse per revolution)</em>
+  <br><em>Figure 17 – Optical incremental encoder operating principle: code disc with LED/photodetector pairs generating quadrature signals A and B (90° phase offset), plus index pulse Z (one pulse per revolution)</em>
 </p>
 
 An optical incremental encoder consists of three main components:
@@ -529,12 +531,12 @@ In this experiment, Channel A and Channel B are read into the **NI USB-6210** mo
 
 <p align="center">
   <img src="rpimage/PCB%20Piezotronics.jpg" width="300"/>
-  <br><em>Figure 14 – PCB Piezotronics 356A32/NC triaxial ICP® accelerometer</em>
+  <br><em>Figure 15 – PCB Piezotronics 356A32/NC triaxial ICP® accelerometer</em>
 </p>
 
 <p align="center">
   <img src="rpimage/PCB%20Piezotronics%20wire.jpg" width="500"/>
-  <br><em>Figure 15 – Accelerometer wiring and connector detail</em>
+  <br><em>Figure 16 – Accelerometer wiring and connector detail</em>
 </p>
 
 **Purpose:** Measures vibration acceleration along 3 orthogonal axes (X, Y, Z) simultaneously at the rolling bearing housing nearest to the gear under investigation.
@@ -597,7 +599,7 @@ The flat frequency response of 1–4,000 Hz covers the key diagnostic frequency 
 
 <p align="center">
   <img src="rpimage/Proximity%20sensor.jpg" width="400"/>
-  <br><em>Figure 19 – Eddy‑current proximity probe installed on test rig, aimed radially at the gear surface</em>
+  <br><em>Figure 20 – Eddy-current proximity probe installed on test rig, aimed radially at the gear surface</em>
 </p>
 
 **Purpose:** Measures shaft phase — the instantaneous angular position of the gear relative to a fixed reference point during each revolution. This signal is used for two primary purposes: (1) providing a phase reference for Order Tracking analysis, and (2) enabling angular-domain signal resampling to synchronize vibration data with shaft rotation.
@@ -608,7 +610,7 @@ The flat frequency response of 1–4,000 Hz covers the key diagnostic frequency 
 
 <p align="center">
   <img src="rpimage/proximity%20sensor.png" width="580"/>
-  <br><em>Figure 17 – Eddy-current sensor operating principle: the probe coil (induction coil) generates a high-frequency AC magnetic field; eddy currents induced in the conductive target attenuate the field, and the current sensor detects the impedance change proportional to gap distance</em>
+  <br><em>Figure 18 – Eddy-current sensor operating principle: the probe coil (induction coil) generates a high-frequency AC magnetic field; eddy currents induced in the conductive target attenuate the field, and the current sensor detects the impedance change proportional to gap distance</em>
 </p>
 
 The eddy-current proximity probe exploits **electromagnetic induction in a conductive target surface**:
@@ -628,7 +630,7 @@ The output voltage decreases as the target approaches (smaller gap → stronger 
 
 <p align="center">
   <img src="rpimage/Proximity%20sensor2.jpg" width="650"/>
-  <br><em>Figure 18 – Bently Nevada proximity probe dimensional drawing, showing probe tip, case thread, hex nut, unthreaded length (A), case length (B), total length (C), and miniature male coaxial connector (D)</em>
+  <br><em>Figure 19 – Bently Nevada proximity probe dimensional drawing, showing probe tip, case thread, hex nut, unthreaded length (A), case length (B), total length (C), and miniature male coaxial connector (D)</em>
 </p>
 
 **Phase Measurement Application:**
@@ -647,17 +649,17 @@ The resulting output waveform is a periodic signal with $Z$ cycles per revolutio
 
 <p align="center">
   <img src="rpimage/RK%204%20Bently%20Nevada%20Rotor%20Kit%20Proximitor%20Assembly%201.jpg" width="420"/>
-  <br><em>Figure 20 – RK4 Rotor Kit Proximitor Assembly front panel: four PROX OUT BNC connectors (PROX 1–4) and one Kø (keyphasor) output. Each output channel provides conditioned DC voltage proportional to probe gap.</em>
+  <br><em>Figure 21 – RK4 Rotor Kit Proximitor Assembly front panel: four PROX OUT BNC connectors (PROX 1–4) and one Kø (keyphasor) output. Each output channel provides conditioned DC voltage proportional to probe gap.</em>
 </p>
 
 <p align="center">
   <img src="rpimage/RK%204%20Bently%20Nevada%20Rotor%20Kit%20Proximitor%20Assembly%202.jpg" width="420"/>
-  <br><em>Figure 21 – RK4 Proximitor Assembly rear panel: PROBE 1–4 input connectors (coaxial, for probe cables), Kø probe input, −Vt and COM power terminals, POWER input terminals (red/black banana jacks)</em>
+  <br><em>Figure 22 – RK4 Proximitor Assembly rear panel: PROBE 1–4 input connectors (coaxial, for probe cables), Kø probe input, −Vt and COM power terminals, POWER input terminals (red/black banana jacks)</em>
 </p>
 
 <p align="center">
   <img src="rpimage/RK%204%20Bently%20Nevada%20Rotor%20Kit%20Proximitor%20Speed%20Control.png" width="600"/>
-  <br><em>Figure 22 – RK4 Motor Speed Controller rear panel (Bently Nevada 149844-01): SPEED PROBE SMA input, CW/CCW direction switch, SLOW ROLL ADJUST, EXTERNAL INPUT (±20VDC), PROX POWER OUTPUT (−Vt and COM), MOTOR OUTPUT, and POWER INPUT connectors</em>
+  <br><em>Figure 23 – RK4 Motor Speed Controller rear panel (Bently Nevada 149844-01): SPEED PROBE SMA input, CW/CCW direction switch, SLOW ROLL ADJUST, EXTERNAL INPUT (±20VDC), PROX POWER OUTPUT (−Vt and COM), MOTOR OUTPUT, and POWER INPUT connectors</em>
 </p>
 
 The complete signal chain for the proximity sensor is:
@@ -696,7 +698,7 @@ RK4 Motor Speed Controller (Bently Nevada 149844-01)
 
 <p align="center">
   <img src="rpimage/torque.png" width="450"/>
-  <br><em>Figure 23 – JIHSENSE rotary torque sensor RT‑2.5 Nm</em>
+  <br><em>Figure 24 – JIHSENSE rotary torque sensor RT-2.5 Nm</em>
 </p>
 
 **Purpose:** Measures the braking torque applied by the magnetic powder brake to the gearbox output shaft in real time, providing a continuous, quantitative measure of the mechanical load imposed on the gear train during each experiment.
@@ -719,7 +721,7 @@ where $GF$ is the gauge factor (typically 2.0–2.1 for metallic strain gauges).
 
 <p align="center">
   <img src="rpimage/strain%20gauge.png" width="400"/>
-  <br><em>Figure 24 – Strain gauge Wheatstone bridge detail: four gauges bonded at ±45° to shaft axis; R1 and R3 in tension, R2 and R4 in compression under positive torque direction, forming a full-bridge configuration</em>
+  <br><em>Figure 25 – Strain gauge Wheatstone bridge detail: four gauges bonded at ±45° to shaft axis; R1 and R3 in tension, R2 and R4 in compression under positive torque direction, forming a full-bridge configuration</em>
 </p>
 
 **Technical Specifications — RT-2.5 Nm:**
@@ -759,7 +761,7 @@ The millivolt-level differential output from the torque sensor's Wheatstone brid
 
 <p align="center">
   <img src="rpimage/amplifier%20JS100.png" width="500"/>
-  <br><em>Figure 25 – JS‑100 load‑cell amplifier (JIHSENSE): provides bridge excitation, differential amplification, and configurable voltage/current output for the torque sensor signal</em>
+  <br><em>Figure 26 – JS-100 load-cell amplifier (JIHSENSE): provides bridge excitation, differential amplification, and configurable voltage/current output for the torque sensor signal</em>
 </p>
 
 **Torque Calculation from Amplifier Output Signal:**
@@ -783,12 +785,12 @@ Where $T_{rated} = 2.5$ N·m, and $U_{min}$, $U_{max}$ are the output voltages c
 
 <p align="center">
   <img src="rpimage/9234.png" width="450"/>
-  <br><em>Figure 26 – NI USB‑9234 Dynamic Signal Acquisition module (4-channel, 24-bit, 51.2 kS/s, with per-channel IEPE excitation)</em>
+  <br><em>Figure 27 – NI USB-9234 Dynamic Signal Acquisition module (4-channel, 24-bit, 51.2 kS/s, with per-channel IEPE excitation)</em>
 </p>
 
 <p align="center">
   <img src="rpimage/9234%201channel.png" width="500"/>
-  <br><em>Figure 27 – NI USB‑9234 single-channel wiring diagram: constant current source (IEPE) on the coaxial signal line powers the accelerometer preamplifier; AC coupling removes the DC bias at the ADC input</em>
+  <br><em>Figure 28 – NI USB-9234 single-channel wiring diagram: constant current source (IEPE) on the coaxial signal line powers the accelerometer preamplifier; AC coupling removes the DC bias at the ADC input</em>
 </p>
 
 **Introduction:**
@@ -838,12 +840,12 @@ The maximum sample rate of **51.2 kS/s** per channel provides a Nyquist frequenc
 
 <p align="center">
   <img src="rpimage/6210.png" width="380"/>
-  <br><em>Figure 28 – NI USB‑6210 M-Series multifunction DAQ (16-bit, 250 kS/s, 16 AI channels, 2× 32-bit counters)</em>
+  <br><em>Figure 29 – NI USB-6210 M-Series multifunction DAQ (16-bit, 250 kS/s, 16 AI channels, 2× 32-bit counters)</em>
 </p>
 
 <p align="center">
   <img src="rpimage/6210%20pinout.png" width="420"/>
-  <br><em>Figure 29 – NI USB‑6210 screw terminal pinout: AI channels (differential and single-ended), digital I/O lines, and PFI counter/timer inputs</em>
+  <br><em>Figure 30 – NI USB-6210 screw terminal pinout: AI channels (differential and single-ended), digital I/O lines, and PFI counter/timer inputs</em>
 </p>
 
 **Introduction:**
@@ -934,7 +936,7 @@ The **DAQmx API** provides all of these through its comprehensive programming in
 
 <p align="center">
   <img src="rpimage/labview-frontpannel.png" width="800"/>
-  <br><em>Figure 30 – LabVIEW VI Front Panel: acquisition controls (left column), real-time waveform display (top-right tab panel), and DAQ channel/trigger configuration parameters (bottom row)</em>
+  <br><em>Figure 31 – LabVIEW VI Front Panel: acquisition controls (left column), real-time waveform display (top-right tab panel), and DAQ channel/trigger configuration parameters (bottom row)</em>
 </p>
 
 The front panel is divided into three functional zones:
@@ -1055,7 +1057,7 @@ NI's DAQmx example library provides an official pattern for this scenario: **"Re
 
 <p align="center">
   <img src="rpimage/Counter-read encoder (continuously clock).png" width="750"/>
-  <br><em>Figure 31 – NI DAQmx example: "Read Encoder (Continuously Clock)". Four stages: Channel Settings (CI Angular Encoder, A/B/Z terminals), Timing Settings (Sample Clock Source = /Dev3/ai/SampleClock), Trigger Settings (Digital Arm Start triggered by /Dev3/ai/StartTrigger), and Acquire Data loop (Counter 1D DBL 1Chan NSamp).</em>
+  <br><em>Figure 32 – NI DAQmx example: "Read Encoder (Continuously Clock)". Four stages: Channel Settings (CI Angular Encoder, A/B/Z terminals), Timing Settings (Sample Clock Source = /Dev3/ai/SampleClock), Trigger Settings (Digital Arm Start triggered by /Dev3/ai/StartTrigger), and Acquire Data loop (Counter 1D DBL 1Chan NSamp).</em>
 </p>
 
 The example (Figure 31) demonstrates four stages:
@@ -1084,7 +1086,7 @@ Given these hardware constraints, the implementation follows the NI-documented s
 
 <p align="center">
   <img src="rpimage/labview-blockdiagram.png" width="800"/>
-  <br><em>Figure 32 – Block Diagram 1 (Initialization frame): Three parallel task configuration chains — Dev1 AI (accelerometer + phase), Dev3 AI (torque), Dev3 Counter (encoder) — each with DAQmx Create Channel → DAQmx Timing → (counter only) DAQmx Trigger. All three DAQmx Start Task calls execute within one Flat Sequence frame for software synchronization.</em>
+  <br><em>Figure 33 – Block Diagram 1 (Initialization frame): Three parallel task configuration chains — Dev1 AI (accelerometer + phase), Dev3 AI (torque), Dev3 Counter (encoder) — each with DAQmx Create Channel → DAQmx Timing → (counter only) DAQmx Trigger. All three DAQmx Start Task calls execute within one Flat Sequence frame for software synchronization.</em>
 </p>
 
 **Comparison: Software vs. Hardware Synchronization**
@@ -1111,7 +1113,7 @@ The complete VI is structured as a **three-phase Flat Sequence** at the top leve
 
 <p align="center">
   <img src="rpimage/flat sequence.png" width="750"/>
-  <br><em>Figure 33 – Flat Sequence structure in LabVIEW: two AI tasks (physical channels 0 and 1) each configured with DAQmx Create Channel, DAQmx Timing (Sample Clock), DAQmx Start Task, DAQmx Read, and DAQmx Clear Task — all within a single sequence frame. The annotation reads: <strong>"Both DAQmx Start Task VIs must execute before data will exit the structure, thus both tasks will start at relatively the same time."</strong> This illustrates the software synchronization principle applied in this experiment.</em>
+  <br><em>Figure 34 – Flat Sequence structure in LabVIEW: two AI tasks (physical channels 0 and 1) each configured with DAQmx Create Channel, DAQmx Timing (Sample Clock), DAQmx Start Task, DAQmx Read, and DAQmx Clear Task — all within a single sequence frame. The annotation reads: <strong>"Both DAQmx Start Task VIs must execute before data will exit the structure, thus both tasks will start at relatively the same time."</strong> This illustrates the software synchronization principle applied in this experiment.</em>
 </p>
 
 The three-phase workflow of the VI is as follows (detailed block diagrams are provided in Appendix A):
@@ -1153,7 +1155,7 @@ The data acquisition software employs the **Producer–Consumer design pattern**
 
 <p align="center">
   <img src="rpimage/procedure-consume loop.png" width="480"/>
-  <br><em>Figure 32 – Producer–Consumer architecture in LabVIEW (NI documentation). The Producer loop generates data and places it into the queue via Enqueue Element; the Consumer loop retrieves data via Dequeue Element and processes it. An Obtain Queue VI creates the shared queue reference before both loops begin.</em>
+  <br><em>Figure 35 – Producer–Consumer architecture in LabVIEW (NI documentation). The Producer loop generates data and places it into the queue via Enqueue Element; the Consumer loop retrieves data via Dequeue Element and processes it. An Obtain Queue VI creates the shared queue reference before both loops begin.</em>
 </p>
 
 As shown in Figure 32, the architecture consists of two parallel While Loops connected by a **LabVIEW Queue** data structure:
