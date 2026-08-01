@@ -1008,7 +1008,7 @@ The front panel is divided into three functional zones:
 A DAQmx acquisition task in LabVIEW follows a standardized lifecycle. For each signal group, a separate task is created and managed, progressing through four phases: Configuration (Steps 1–4), Start (Step 5), Acquisition loop (Steps 6–8), and Cleanup (Steps 9–10). The complete workflow is illustrated in Figure 10.
 
 <p align="center">
-  <img src="rpimage/daqmx_lifecycle_diagram.jpg" width="820"/>
+  <img src="rpimage/daqmx_lifecycle_diagram.jpg" width="1050"/>
   <br><em>Figure 10 – DAQmx acquisition task lifecycle for the 2-device test-rig LabVIEW implementation. Blue: configuration phase (Create Task → Virtual Channel → Timing → Trigger); Green: task start (all three tasks launched in a single Flat Sequence frame); Orange dashed box: Producer–Consumer acquisition loop repeating every 100 ms; Red: cleanup phase (Stop → Clear).</em>
 </p>
 
