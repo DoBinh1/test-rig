@@ -1005,41 +1005,12 @@ The front panel is divided into three functional zones:
 
 ### 3.4. DAQmx Task Creation Workflow
 
-A DAQmx acquisition task in LabVIEW follows a standardized lifecycle. For each signal group, a separate task is created and managed:
+A DAQmx acquisition task in LabVIEW follows a standardized lifecycle. For each signal group, a separate task is created and managed, progressing through four phases: Configuration (Steps 1–4), Start (Step 5), Acquisition loop (Steps 6–8), and Cleanup (Steps 9–10). The complete workflow is illustrated in Figure 10.
 
-```
-1. DAQmx Create Task           → Instantiate a new named task object
-
-2. DAQmx Create Virtual Channel → Define one virtual channel per physical sensor
-                                   For AI (voltage/IEPE): device, terminal, coupling,
-                                   IEPE on/off, measurement range
-                                   For Counter: device, counter number,
-                                   decoding type (X4), Z index settings
-
-3. DAQmx Timing (Sample Clock)  → Configure the hardware sample clock:
-                                   - Sample rate (25,600 S/s for Dev1)
-                                   - Samples per read (2560 = 100 ms per block)
-                                   - Acquisition mode: Continuous Samples
-                                   For counter: clock source = /Dev3/ai/SampleClock
-
-4. DAQmx Trigger (Counter only) → ArmStart: Digital Edge, Rising,
-                                   Source = /Dev3/ai/StartTrigger
-                                   (Arms counter to start when Dev3 AI task begins)
-
-5. DAQmx Start Task (×3)        → All three tasks started in same Flat Sequence frame
-                                   Order: Dev1 AI → Dev3 AI → Dev3 Counter
-                                   (software synchronization — see Section 3.6)
-
-6. DAQmx Read (in Producer loop)→ Transfer data from hardware FIFO to PC RAM
-                                   (every 100 ms per read block)
-
-7. Enqueue Data                 → Push 6-channel data cluster to Queue
-
-8. Dequeue + Write File         → Consumer loop retrieves and writes TDMS
-
-9. DAQmx Stop Task              → Signal hardware to stop after current buffer
-10. DAQmx Clear Task            → Release hardware resources
-```
+<p align="center">
+  <img src="rpimage/daqmx_lifecycle_diagram.jpg" width="820"/>
+  <br><em>Figure 10 – DAQmx acquisition task lifecycle for the 2-device test-rig LabVIEW implementation. Blue: configuration phase (Create Task → Virtual Channel → Timing → Trigger); Green: task start (all three tasks launched in a single Flat Sequence frame); Orange dashed box: Producer–Consumer acquisition loop repeating every 100 ms; Red: cleanup phase (Stop → Clear).</em>
+</p>
 
 The **hardware buffer** (FIFO in the DAQ module) acts as the first buffer between the ADC and the PC. If `DAQmx Read` does not retrieve data fast enough, a **buffer overrun** error occurs and data is lost. The Producer–Consumer architecture prevents this.
 
