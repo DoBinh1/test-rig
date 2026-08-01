@@ -1056,7 +1056,7 @@ The ideal synchronization method would route a hardware trigger or shared sample
 Given these hardware constraints, the implementation follows the NI-documented software synchronization approach: all three `DAQmx Start Task` calls are placed within a **single Flat Sequence frame** to minimize (but not eliminate) inter-device startup latency.
 
 <p align="center">
-  <img src="rpimage/labview-blockdiagram.png" width="800"/>
+  <img src="rpimage/flat sequence.png" width="800"/>
   <br><em>Figure 33 – Block Diagram 1 (Initialization frame): Three parallel task configuration chains — Dev1 AI (accelerometer + phase), Dev3 AI (torque), Dev3 Counter (encoder) — each with DAQmx Create Channel → DAQmx Timing → (counter only) DAQmx Trigger. All three DAQmx Start Task calls execute within one Flat Sequence frame for software synchronization.</em>
 </p>
 
